@@ -1,0 +1,45 @@
+alunos = []
+continuar = True
+class Aluno:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def apresentar(self):
+        print(f"Nome: {self.nome} | Idade: {self.idade}")
+
+def adicionar_aluno(nome, idade):
+    aluno = Aluno(nome, idade)
+    alunos.append(aluno)
+
+def mostrar_alunos(alunos):
+    for aluno in alunos:
+        aluno.apresentar()
+
+def aniversario(nome):
+    for aluno in alunos:
+         if aluno.nome == nome:
+             aluno.idade = aluno.idade + 1
+             print("Aniversario feito com sucesso")
+             return
+    print("Aluno Invalido")
+while continuar:
+    print("1 - Adicionar Aluno")
+    print()
+    print("2 - Mostrar Alunos")
+    print()
+    print("3 - Fazer aniversario de um aluno")
+    print()
+    print("4 - Sair")
+    yn = int(input())
+    if yn == 1:
+        nome = input("Qual o nome do aluno? ")
+        idade = int(input("Qual a idade do aluno?"))
+        adicionar_aluno(nome, idade)
+    elif yn == 2:
+        mostrar_alunos(alunos)
+    elif yn == 3:
+        nome = input("Qual aluno vc quer fazer aniversario?")
+        aniversario(nome)
+    elif yn == 4:
+        continuar = False
