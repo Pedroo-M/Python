@@ -1,0 +1,52 @@
+biblioteca = []
+continuar = True
+class Livro:
+    def __init__(self, autor, titulo, ano):
+        self.autor = autor
+        self.titulo = titulo
+        self.ano = ano
+    def mostrar(self):
+        print(f"Livro: {self.titulo} | Autor: {self.autor} | Ano: {self.ano}")
+
+def adicionar_livro(autor, titulo, ano):
+    livro = Livro(autor, titulo, ano)
+    biblioteca.append(livro)
+def mostrar_livro():
+    for livro in biblioteca:
+        livro.mostrar()
+def buscar_livro(titulo):
+    for livro in biblioteca:
+        if livro.titulo == titulo:
+            livro.mostrar()
+            encontrado = True
+            return
+        if not encontrado:
+            print("Titulo Invalido")
+
+while continuar:
+    print("1 - Adicionar Livro")
+    print()
+    print("2 - Mostrar Biblioteca")
+    print()
+    print("3 - Buscar livro")
+    print()
+    print("4 - Sair")
+    print()
+    yn = int(input())
+    if yn == 1:
+        print("Qual o titulo do livro?")
+        titulo = input()
+        print("Qual o autor do livro?")
+        autor = input()
+        print("Qual o ano do livro?")
+        ano = input()
+        adicionar_livro(autor, titulo, ano)
+        print("Livro Adicionado")
+    if yn == 2:
+        mostrar_livro()
+    if yn == 3:
+        print("Qual livro vc deseja buscar?")
+        titulo = input()
+        buscar_livro(titulo)
+    if yn == 4:
+        continuar = False
