@@ -1,0 +1,27 @@
+continuar = True
+def criar_exercicio (exercicio, serie, reps):
+    return {
+        "exercicio": exercicio,
+        "series": serie,
+        "reps": reps
+    }
+
+def mostrar_caderno(caderno):
+    for item in caderno:
+        print(
+            "Exercicio:", item["exercicio"],
+            "| Series: ", item["series"],
+            "| Reps", item["reps"]
+         )
+
+caderno = []
+
+while continuar:
+    exercicio = input("Qual o exercicio? ")
+    serie = int(input("Quantas series foram? "))
+    reps = int(input("Quantas reps sairam? "))
+    caderno.append(criar_exercicio(exercicio, serie, reps))
+    resp = input("Quer continuar? ")
+    if resp.lower() != "s":
+        continuar = False
+mostrar_caderno(caderno)
