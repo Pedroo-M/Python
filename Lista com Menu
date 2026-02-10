@@ -1,0 +1,29 @@
+caderno = []
+continuar = True
+def add_exercicio (exercicio):
+    item = {
+        "nome": exercicio
+    }
+    caderno.append(item)
+
+def mostrar_caderno (caderno):
+    for item in caderno:
+        print("Exercicio:", item["nome"])
+while continuar:
+    print("1- Adicionar Exercicio ")
+    print()
+    print("2- Mostrar Caderno ")
+    print()
+    print("3- Sair ")
+    yn = int(input())
+    if yn == 1:
+        exercicio = input("Qual o exercicio? ")
+        add_exercicio(exercicio)
+        print()
+    elif yn == 2:
+        mostrar_caderno(caderno)
+        print()
+    elif yn == 3:
+        continuar = False
+    elif yn != 3:
+        print("Opcao Invalida")
