@@ -1,0 +1,22 @@
+pessoas = []
+def criar_pessoa(nome, idade):
+    item = {
+        "Nome": nome,
+        "Idade": idade
+    }
+    pessoas.append(item)
+
+def mostrar_pessoa(pessoas):
+    for item in pessoas:
+        print(
+            "Nome: ", item["Nome"],
+            " | Idade:", item["Idade"]
+        )
+
+nome = input("Qual o nome? ")
+print()
+idade = input("Qual a idade? ")
+print()
+
+criar_pessoa(nome, idade)
+mostrar_pessoa(pessoas)
