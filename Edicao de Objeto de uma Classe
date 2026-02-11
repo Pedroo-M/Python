@@ -1,0 +1,39 @@
+continuar = True
+class Conta:
+    def __init__(self, titular):
+        self.titular = titular
+        self.saldo = 0
+
+    def mostrar_saldo(self):
+        print(f"Titular: {self.titular} | Saldo: {self.saldo}")
+    def depositar_valor(self, valor):
+        if valor > 0:
+            self.saldo += valor
+        return
+        if self.saldo < 0:
+            print("Saldo Invalido")
+    def sacar_valor(self,valor):
+        if (valor > self.saldo) or (valor < 0):
+            print("Acao invalida")
+        else:
+            self.saldo -= valor
+            print(f"Seu novo saldo e de: {self.saldo}")
+        return
+conta = Conta("Pedro")
+while continuar:
+    print("1 - Deposiar Valor na Conta")
+    print()
+    print("2 - Sacar Saldo em Conta")
+    print()
+    print("3 - Mostrar Dados da Conta")
+    yn = int(input())
+    if yn == 1:
+        valor = int(input("Digite o valor a ser depositado: "))
+        conta.depositar_valor(valor)
+    elif yn == 2:
+        valor = int(input("Qual valor vc quer sacar? "))
+        conta.sacar_valor(valor)
+    elif yn == 3:
+        conta.mostrar_saldo()
+    elif yn == 4:
+        continuar = False
