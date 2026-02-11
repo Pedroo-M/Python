@@ -1,0 +1,39 @@
+continuar = True
+class Aluno:
+    def __init__(self, nome, nota1, nota2):
+        self.nome = nome
+        self.nota1 = nota1
+        self.nota2 = nota2
+    def calcular_media(self):
+        return (self.nota1 + self.nota2) / 2
+    def situacao(self):
+        if Aluno.calcular_media(self) >= 7:
+            return "Aprovado"
+        elif Aluno.calcular_media(self) >= 5:
+            return "Recuperacao"
+        else:
+            return "Reprovado"
+    def mostrar_dados(self):
+        print(f"Nome: {self.nome} | Media: ", Aluno.calcular_media(self), " | Situacao: ", Aluno.situacao(self))
+while continuar:
+    print("1 - Adicionar Aluno")
+    print()
+    print("2 - Mostrar Aluno")
+    print()
+    print("3 - Sair")
+    yn = int(input())
+    if yn == 1:
+        nome = input("Qual o nome do aluno? ")
+        print()
+        nota1 = float(input("Qual foi a primeira nota do aluno? "))
+        print()
+        nota2 = float(input("Qual foi a segunda nota do aluno? "))
+        print()
+        aluno = Aluno(nome, nota1, nota2)
+    elif yn == 2:
+        if aluno:
+            aluno.mostrar_dados()
+        else:
+            print("Nenhum aluno cadastrado")
+    elif yn == 3:
+        continuar = False
