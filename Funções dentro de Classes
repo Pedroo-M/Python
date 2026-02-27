@@ -36,5 +36,4 @@ while continuar:
         else:
             print("Nenhum aluno cadastrado")
     elif yn == 3:
-
         continuar = False
